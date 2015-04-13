@@ -1,0 +1,56 @@
+
+// To check if a library is compiled with CocoaPods you
+// can use the `COCOAPODS` macro definition which is
+// defined in the xcconfigs so it is available in
+// headers also when they are imported in the client
+// project.
+
+
+// ASOAnimatedButton
+#define COCOAPODS_POD_AVAILABLE_ASOAnimatedButton
+#define COCOAPODS_VERSION_MAJOR_ASOAnimatedButton 1
+#define COCOAPODS_VERSION_MINOR_ASOAnimatedButton 0
+#define COCOAPODS_VERSION_PATCH_ASOAnimatedButton 1
+
+// ASOAnimatedButton/BounceButton
+#define COCOAPODS_POD_AVAILABLE_ASOAnimatedButton_BounceButton
+#define COCOAPODS_VERSION_MAJOR_ASOAnimatedButton_BounceButton 1
+#define COCOAPODS_VERSION_MINOR_ASOAnimatedButton_BounceButton 0
+#define COCOAPODS_VERSION_PATCH_ASOAnimatedButton_BounceButton 1
+
+// ASOAnimatedButton/TwoStateButton
+#define COCOAPODS_POD_AVAILABLE_ASOAnimatedButton_TwoStateButton
+#define COCOAPODS_VERSION_MAJOR_ASOAnimatedButton_TwoStateButton 1
+#define COCOAPODS_VERSION_MINOR_ASOAnimatedButton_TwoStateButton 0
+#define COCOAPODS_VERSION_PATCH_ASOAnimatedButton_TwoStateButton 1
+
+// HTPressableButton
+#define COCOAPODS_POD_AVAILABLE_HTPressableButton
+#define COCOAPODS_VERSION_MAJOR_HTPressableButton 1
+#define COCOAPODS_VERSION_MINOR_HTPressableButton 3
+#define COCOAPODS_VERSION_PATCH_HTPressableButton 2
+
+// HTPressableButton/All
+#define COCOAPODS_POD_AVAILABLE_HTPressableButton_All
+#define COCOAPODS_VERSION_MAJOR_HTPressableButton_All 1
+#define COCOAPODS_VERSION_MINOR_HTPressableButton_All 3
+#define COCOAPODS_VERSION_PATCH_HTPressableButton_All 2
+
+// JTNumberScrollAnimatedView
+#define COCOAPODS_POD_AVAILABLE_JTNumberScrollAnimatedView
+#define COCOAPODS_VERSION_MAJOR_JTNumberScrollAnimatedView 1
+#define COCOAPODS_VERSION_MINOR_JTNumberScrollAnimatedView 0
+#define COCOAPODS_VERSION_PATCH_JTNumberScrollAnimatedView 0
+
+// M13ProgressSuite
+#define COCOAPODS_POD_AVAILABLE_M13ProgressSuite
+#define COCOAPODS_VERSION_MAJOR_M13ProgressSuite 1
+#define COCOAPODS_VERSION_MINOR_M13ProgressSuite 2
+#define COCOAPODS_VERSION_PATCH_M13ProgressSuite 7
+
+// SCLAlertView-Objective-C
+#define COCOAPODS_POD_AVAILABLE_SCLAlertView_Objective_C
+#define COCOAPODS_VERSION_MAJOR_SCLAlertView_Objective_C 0
+#define COCOAPODS_VERSION_MINOR_SCLAlertView_Objective_C 7
+#define COCOAPODS_VERSION_PATCH_SCLAlertView_Objective_C 0
+
