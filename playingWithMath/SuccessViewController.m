@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.messageLabel.text = @"You made it to our top 10";
+//    self.messageLabel.text = @"You made it to our top scoring list.";
     // Do any additional setup after loading the view.
 }
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D96A109A-605B-4A4B-856D-ABC715FE19E8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>playingWithMath</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C35041F530C06E491C8FBA50FE50B2E09D76E268</key>
+		<string>https://github.com/n3llee/NHSdailyMath.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>playingWithMath.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C35041F530C06E491C8FBA50FE50B2E09D76E268</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/n3llee/NHSdailyMath.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C35041F530C06E491C8FBA50FE50B2E09D76E268</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C35041F530C06E491C8FBA50FE50B2E09D76E268</string>
+			<key>IDESourceControlWCCName</key>
+			<string>playingWithMath</string>
+		</dict>
+	</array>
+</dict>
+</plist>
