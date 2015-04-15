@@ -6,13 +6,13 @@ Daily Math is a simple arithmetic exercise for all ages.
 ### Screenshot of the Apps
 
 ##### Main Menu
-![main menu](https://cloud.githubusercontent.com/assets/6547793/7152151/e3c6ee26-e303-11e4-9e97-438966101e3e.png)
+![main menu](https://cloud.githubusercontent.com/assets/6547793/7152151/e3c6ee26-e303-11e4-9e97-438966101e3e.png =300x450)
 
 ##### Playing the game
-![Play Game](https://cloud.githubusercontent.com/assets/6547793/7152161/0ce74e40-e304-11e4-94ac-465f3bfd3e11.png)
+![Play Game](https://cloud.githubusercontent.com/assets/6547793/7152161/0ce74e40-e304-11e4-94ac-465f3bfd3e11.png =300x450)
 
 ##### Confirmation message
-![confirmation message](https://cloud.githubusercontent.com/assets/6547793/7152162/216eff98-e304-11e4-95e0-fa6dca69499a.png)
+![confirmation message](https://cloud.githubusercontent.com/assets/6547793/7152162/216eff98-e304-11e4-95e0-fa6dca69499a.png =300x450)
 
 
 ### Next Features
