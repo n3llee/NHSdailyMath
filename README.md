@@ -7,13 +7,12 @@ Daily Math is a simple arithmetic exercise for all ages.
 
 ##### Main Menu
 <img src="https://cloud.githubusercontent.com/assets/6547793/7152151/e3c6ee26-e303-11e4-9e97-438966101e3e.png" width="300px" height="450px" />
-![main menu](https://cloud.githubusercontent.com/assets/6547793/7152151/e3c6ee26-e303-11e4-9e97-438966101e3e.png =300x450)
 
 ##### Playing the game
-![Play Game](https://cloud.githubusercontent.com/assets/6547793/7152161/0ce74e40-e304-11e4-94ac-465f3bfd3e11.png =300x450)
+<img src="https://cloud.githubusercontent.com/assets/6547793/7152161/0ce74e40-e304-11e4-94ac-465f3bfd3e11.png" width="300px" height="450px" />
 
 ##### Confirmation message
-![confirmation message](https://cloud.githubusercontent.com/assets/6547793/7152162/216eff98-e304-11e4-95e0-fa6dca69499a.png =300x450)
+<img src="https://cloud.githubusercontent.com/assets/6547793/7152162/216eff98-e304-11e4-95e0-fa6dca69499a.png" width="300px" height="450px" />
 
 
 ### Next Features
