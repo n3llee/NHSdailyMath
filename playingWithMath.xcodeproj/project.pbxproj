@@ -16,6 +16,7 @@
 		7423A0641ABC5D6000D4A156 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7423A0621ABC5D6000D4A156 /* LaunchScreen.xib */; };
 		7423A0701ABC5D6000D4A156 /* playingWithMathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7423A06F1ABC5D6000D4A156 /* playingWithMathTests.m */; };
 		7423A07B1ABC8EF800D4A156 /* FISMathGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7423A07A1ABC8EF800D4A156 /* FISMathGenerator.m */; };
+		74268B9F1ADD95DB00D050A4 /* ConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74268B9E1ADD95DB00D050A4 /* ConfirmationViewController.m */; };
 		747F794E1AD5BD5500825492 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747F794D1AD5BD5500825492 /* HomeViewController.m */; };
 		747F79541AD7228700825492 /* ScreenBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 747F79531AD7228700825492 /* ScreenBorder.m */; };
 		747F795A1ADB17F500825492 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 747F79591ADB17F500825492 /* DataStore.m */; };
@@ -55,6 +56,8 @@
 		7423A06F1ABC5D6000D4A156 /* playingWithMathTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = playingWithMathTests.m; sourceTree = "<group>"; };
 		7423A0791ABC8EF800D4A156 /* FISMathGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISMathGenerator.h; sourceTree = "<group>"; };
 		7423A07A1ABC8EF800D4A156 /* FISMathGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISMathGenerator.m; sourceTree = "<group>"; };
+		74268B9D1ADD95DB00D050A4 /* ConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmationViewController.h; sourceTree = "<group>"; };
+		74268B9E1ADD95DB00D050A4 /* ConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmationViewController.m; sourceTree = "<group>"; };
 		747F794C1AD5BD5500825492 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		747F794D1AD5BD5500825492 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		747F79521AD7228700825492 /* ScreenBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenBorder.h; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				747F79611ADB553C00825492 /* SuccessViewController.m */,
 				747F79631ADB555400825492 /* FailedViewController.h */,
 				747F79641ADB555400825492 /* FailedViewController.m */,
+				74268B9D1ADD95DB00D050A4 /* ConfirmationViewController.h */,
+				74268B9E1ADD95DB00D050A4 /* ConfirmationViewController.m */,
 				747F796C1ADB59A100825492 /* Top30SecondsViewController.h */,
 				747F796D1ADB59A100825492 /* Top30SecondsViewController.m */,
 				747F79691ADB598100825492 /* TopFullMinuteViewController.h */,
@@ -335,6 +340,7 @@
 				747F79651ADB555400825492 /* FailedViewController.m in Sources */,
 				747F795D1ADB195200825492 /* Score.m in Sources */,
 				7423A0591ABC5D6000D4A156 /* AppDelegate.m in Sources */,
+				74268B9F1ADD95DB00D050A4 /* ConfirmationViewController.m in Sources */,
 				74E8E9011AC9D35E00E56EA9 /* MathDataStore.xcdatamodeld in Sources */,
 				747F795A1ADB17F500825492 /* DataStore.m in Sources */,
 				747F794E1AD5BD5500825492 /* HomeViewController.m in Sources */,

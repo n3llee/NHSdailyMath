@@ -14,6 +14,7 @@
 #import "HTPressableButton.h"
 #import "UIColor+HTColor.h"
 #import <M13ProgressSuite/M13ProgressViewPie.h>
+#import "ConfirmationViewController.h"
 
 
 @interface PlayViewController ()
@@ -140,15 +141,18 @@
     
     if ([option.titleLabel.text isEqualToString: self.correctAnswer]) {
         
-        self.answeredCorrectly +=1;
-        self.movingPointsLabel.text = @"+1";
+        self.answeredCorrectly +=5;
+        self.movingPointsLabel.text = @"+5";
+        self.movingPointsLabel.textColor = [UIColor greenColor];
         
         self.currentScore.text = [NSString stringWithFormat:@"%ld",self.answeredCorrectly];
 
+        self.movingPointCenterY.constant = 0;
         self.movingPointsLabel.alpha = 1;
         
-        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
             self.movingPointCenterY.constant = 15;
+            
             [self.view layoutIfNeeded];
             
         } completion:^(BOOL finished) {
@@ -157,6 +161,7 @@
             self.movingPointCenterY.constant = 0;
             [self.view layoutIfNeeded];
             
+//            [self changingOriginalColorOfButton:option];
             [self generatorMathProblem];
             [self viewDidAppear:YES];
             [self generateAnimation];
@@ -169,18 +174,89 @@
     }
     else
     {
-        [self generatorMathProblem];
-        [self viewDidAppear:YES];
-        [self generateAnimation];
+        self.answeredCorrectly -=3;
+        self.movingPointsLabel.text = @"-3";
+        self.movingPointsLabel.textColor = [UIColor redColor];
+        
+        self.currentScore.text = [NSString stringWithFormat:@"%ld",self.answeredCorrectly];
+        self.movingPointCenterY.constant = 15;
+        self.movingPointsLabel.alpha = 1;
+        
+        
+        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+            self.movingPointCenterY.constant = 0;
+            [self.view layoutIfNeeded];
+            
+        } completion:^(BOOL finished) {
+            
+            self.movingPointsLabel.alpha = 0;
+            self.movingPointCenterY.constant = 15;
+            [self.view layoutIfNeeded];
+            
+//            [self changingOriginalColorOfButton:option];
+            [self generatorMathProblem];
+            [self viewDidAppear:YES];
+            [self generateAnimation];
+            NSLog(@"completed");
+            [self.view layoutIfNeeded];
+            
+            
+        }];
+
     }
 }
 
+
+-(void)changingColorOfSelectedButton:(UIButton *) choosenButton
+{
+    NSLog(@"selected button: %@", choosenButton.accessibilityLabel);
+    if ([choosenButton.accessibilityLabel isEqualToString:@"topLeftButton"]) {
+        self.optionOneButton.buttonColor = [UIColor ht_pumpkinColor];
+    }
+    else if ([choosenButton.accessibilityLabel isEqualToString:@"topRightButton"])
+    {
+        self.optionTwoButton.buttonColor = [UIColor ht_pumpkinColor];
+    }
+    else if ([choosenButton.accessibilityLabel isEqualToString:@"bottomLeftButton"])
+    {
+        self.optionThreeButton.buttonColor = [UIColor ht_pumpkinColor];
+    }
+    else if ([choosenButton.accessibilityLabel isEqualToString:@"bottomRightButton"])
+    {
+        self.optionFourButton.buttonColor = [UIColor ht_pumpkinColor];
+    }
+}
+
+-(void)changingOriginalColorOfButton:(UIButton *) choosenButton
+{
+    NSLog(@"selected button: %@", choosenButton.accessibilityLabel);
+    if ([choosenButton.accessibilityLabel isEqualToString:@"topLeftButton"]) {
+        self.optionOneButton.buttonColor = [UIColor ht_concreteColor];
+    }
+    else if ([choosenButton.accessibilityLabel isEqualToString:@"topRightButton"])
+    {
+        self.optionTwoButton.buttonColor = [UIColor ht_concreteColor];
+    }
+    else if ([choosenButton.accessibilityLabel isEqualToString:@"bottomLeftButton"])
+    {
+        self.optionThreeButton.buttonColor = [UIColor ht_concreteColor];
+    }
+    else if ([choosenButton.accessibilityLabel isEqualToString:@"bottomRightButton"])
+    {
+        self.optionFourButton.buttonColor = [UIColor ht_concreteColor];
+    }
+}
 -(void)checkUserScore
 {
     if (self.answeredCorrectly > 0) {
-        [self sendUserToConfirmationPageWithController:@"SuccessVC"];
+        
+        NSString * storyboardName = @"Main";
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+        ConfirmationViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"ConfirmationVC"];
+        vc.pointsCollected = [NSString stringWithFormat:@"%ld", self.answeredCorrectly ];
+        [self presentViewController:vc animated:YES completion:nil];
     }
-    else if (self.answeredCorrectly == 0)
+    else if (self.answeredCorrectly <= 0)
     {
         [self sendUserToConfirmationPageWithController:@"FailedVC"];
     }
@@ -249,6 +325,7 @@
     UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:controllerName];
     [self presentViewController:vc animated:YES completion:nil];
     
+    
 }
 
 
@@ -297,6 +374,11 @@
     self.optionThreeButton = [self createACircularButton];
     self.optionFourButton = [self createACircularButton];
     
+    self.optionOneButton.accessibilityLabel = @"topLeftButton";
+    self.optionTwoButton.accessibilityLabel = @"topRightButton";
+    self.optionThreeButton.accessibilityLabel = @"bottomLeftButton";
+    self.optionFourButton.accessibilityLabel = @"bottomRightButton";
+    
     
     [self.optionOneButton addTarget:self action:@selector(answerButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.optionTwoButton addTarget:self action:@selector(answerButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -341,7 +423,9 @@
     
     
     self.timerLabel.alpha = 0;
+    
     self.counter = self.defaultTimerSetting;
+    
     
     self.pieCountMovement = 0;
     
@@ -379,6 +463,7 @@
     }
     
 }
+
 
 #pragma mark - helper method
 -(void)enabledAllButtons:(BOOL) isEnable

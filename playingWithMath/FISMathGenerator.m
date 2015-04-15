@@ -31,7 +31,7 @@
 {
     self.mathOperations = @[@"+", @"/", @"-", @"*"];
     
-    NSUInteger indexFromArray = arc4random_uniform(4);
+    NSUInteger indexFromArray = arc4random_uniform((int)[self.mathOperations count]);
     
     return self.mathOperations[indexFromArray];
     
@@ -41,29 +41,24 @@
 {
     NSMutableDictionary * questions = [[NSMutableDictionary alloc]init];
     NSMutableArray * questionInArray = [[NSMutableArray alloc]init];
+    self.singleMathOperation= self.findMathOperation;
     
     NSInteger findFirst = 1+arc4random_uniform(10);
     NSInteger findSecond= 1+arc4random_uniform(10);
     
-    self.singleMathOperation= self.findMathOperation;
     
-    
-    if (findFirst == 0 && findSecond == 0) {
-        NSLog(@"got both zero");
-        findFirst = 1;
-        findSecond = 1;
-    }
-    
-    if ([self.singleMathOperation isEqualToString:@"/"]) {
-        
+    if ([self.singleMathOperation isEqualToString:@"/"])
+    {
         self.firstNumber = findFirst * findSecond;
     }
     else
     {
         self.firstNumber = findFirst;
-        
     }
     self.secondNumber = findSecond;
+    
+    
+    
     
     NSString * questionInString = [NSString stringWithFormat:@"%ld %@ %ld =", self.firstNumber, self.singleMathOperation, self.secondNumber];
     [questionInArray addObject:[NSNumber numberWithInteger:self.firstNumber]];
@@ -110,41 +105,28 @@
 //
 //}
 
+//NSLog(@"first number %ld", self.firstNumber);
+//NSLog(@"second number %ld", self.secondNumber);
+//NSLog(@"operation %@", self.singleMathOperation );
 
 -(NSString *)gettingMathAnswer
 {
     double result;
     
-    NSLog(@"first number %ld", self.firstNumber);
-    NSLog(@"second number %ld", self.secondNumber);
-    NSLog(@"operation %@", self.singleMathOperation );
-    
     if ([self.singleMathOperation isEqualToString:@"+"]) {
-        NSLog(@"==> calculate inside. result is %ld", (self.firstNumber+self.secondNumber));
         result = self.firstNumber + self.secondNumber;
-        
     }
-    else if ([self.singleMathOperation isEqualToString:@"-"])
-    {
-        NSLog(@"==> calculate inside. result is %ld", (self.firstNumber-self.secondNumber));
+    else if ([self.singleMathOperation isEqualToString:@"-"]){
         result = self.firstNumber - self.secondNumber;
-        
     }
-    else if ([self.singleMathOperation isEqualToString:@"*"])
-    {
-        NSLog(@"==> calculate inside. result is %ld", (self.firstNumber*self.secondNumber));
+    else if ([self.singleMathOperation isEqualToString:@"*"]){
         result = self.firstNumber * self.secondNumber;
-        
     }
     else if ([self.singleMathOperation isEqualToString:@"/"]) {
-        NSLog(@"==> calculate inside. result is %ld", (self.firstNumber/self.secondNumber));
         result = self.firstNumber / self.secondNumber;
     }
     
-    NSLog(@"==> result of answer int: %f", result);
-    
     self.answer = [NSString stringWithFormat:@"%ld", lroundf(result)];
-    
     
     return self.answer;
 }
@@ -161,9 +143,7 @@
         NSString * answerAdded = listOfFakeNumber[indexToBeChoosen];
         [listOfFakeNumber removeObject:answerAdded];
         [results addObject:answerAdded];
-        
     }
-    NSLog(@"myresults is %@", results);
     
     [self shuffle:results];
     
@@ -184,7 +164,6 @@
 -(NSMutableArray *)generateFakeAnswer
 {
     NSMutableArray * fakeAnswers= [[NSMutableArray alloc]init];
-    
     
     if ([self.singleMathOperation isEqualToString:@"+"]) {
         [fakeAnswers addObject:[NSString stringWithFormat:@"%ld", self.firstNumber - self.secondNumber]];
@@ -229,8 +208,6 @@
         {
             [fakeAnswers addObject:[NSString stringWithFormat:@"%ld%ld",self.secondNumber, self.firstNumber]];
         }
-        
-        
     }
     
     NSLog(@"fake number is %@", fakeAnswers);

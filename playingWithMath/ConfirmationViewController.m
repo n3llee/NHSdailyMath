@@ -1,26 +1,23 @@
 //
-//  Top30SecondsViewController.m
+//  ConfirmationViewController.m
 //  playingWithMath
 //
-//  Created by Nelly Santoso on 4/12/15.
+//  Created by Nelly Santoso on 4/14/15.
 //  Copyright (c) 2015 Nelly Santoso. All rights reserved.
 //
 
-#import "Top30SecondsViewController.h"
-#import <QuartzCore/QuartzCore.h>
+#import "ConfirmationViewController.h"
 
-
-@interface Top30SecondsViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *homeButton;
+@interface ConfirmationViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *pointsEarned;
 
 @end
 
-@implementation Top30SecondsViewController
+@implementation ConfirmationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[self.homeButton layer] setBorderWidth:2.0f];
-    [[self.homeButton layer] setBorderColor:[UIColor whiteColor].CGColor];
+    self.pointsEarned.text = self.pointsCollected;
     // Do any additional setup after loading the view.
 }
 

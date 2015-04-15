@@ -14,7 +14,20 @@
 @property (weak, nonatomic) IBOutlet UIButton *optionOneLabel;
 @property (weak, nonatomic) IBOutlet UIButton *optionTwoLabel;
 @property (weak, nonatomic) IBOutlet UIButton *optionThreeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *optionFourLabel;
+
 @property(nonatomic) NSInteger selectedLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *eyesImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *animateEyes;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *animateTreeOnY;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *animateTreeOnH;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *animateTreeOnHCenterY;
+
+@property(strong,nonatomic) NSTimer *clockTimer;
+@property(nonatomic)NSInteger counter;
+@property(nonatomic)NSInteger defaultTimer;
+
 - (IBAction)chooseChallenges:(id)sender;
 
 
@@ -29,6 +42,7 @@
     // Do any additional setup after loading the view.
     
     self.optionThreeLabel.enabled = NO;
+    self.optionFourLabel.enabled = NO;
 
     
 }
@@ -38,14 +52,39 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.defaultTimer = 300;
+    
+    [self startTimer];
+//    [UIView animateWithDuration:3.0 animations:^{
+//        [self animateMovementOfEyes];
+//    }];
+//    NSInteger eyesMovement = 3;
+//    for (NSInteger i = 0; eyesMovement < 0; i++ ) {
+//        
+//        
+//        
+//    }
+}
+
+
 
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    PlayViewController *playVC = segue.destinationViewController;
+    UIButton *selectedButton = sender;
+    NSLog(@"sender: %@", selectedButton.accessibilityLabel);
     
-    playVC.defaultTimerSetting = self.selectedLabel;
+    if (![selectedButton.accessibilityLabel isEqualToString:@"optionFour"]) {
+        PlayViewController *playVC = segue.destinationViewController;
+        
+        playVC.defaultTimerSetting = self.selectedLabel;
+    }
+    
 }
 
 
@@ -53,7 +92,7 @@
     UIButton * userChoosenButton = sender;
     
     if ([userChoosenButton.accessibilityLabel isEqualToString:@"optionOne"]) {
-        self.selectedLabel = 10;
+        self.selectedLabel = 30;
     }
     else if ([userChoosenButton.accessibilityLabel isEqualToString:@"optionTwo"])
     {
@@ -63,5 +102,155 @@
     {
         self.selectedLabel = 300;
     }
+    else{
+        self.selectedLabel = 0;
+    }
+    
+    [self.clockTimer invalidate];
+}
+
+#pragma mark - Timer
+-(void)startTimer
+{
+    
+    self.counter = self.defaultTimer;
+    
+    
+    self.clockTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownTimer) userInfo:nil repeats:YES];
+//    self.timerLabel.text = [NSString stringWithFormat:@"Time: %ld", self.counter];
+    
+    
+}
+
+-(void)countDownTimer
+{
+    self.counter -=1;
+    
+    NSLog(@"countDownTimer: %ld", self.counter);
+    
+    if (self.counter == 288) {
+        [self animateBlinkingEyes];
+        [self animateMovementOfTreeOnY];
+    }
+    else if (self.counter %5 == 0) {
+        [self animateBlinkingEyes];
+    }
+    else if (self.counter %7 == 0) {
+        [UIView animateWithDuration:2.0 animations:^{
+            [self animateMovementOfEyes];
+        }];
+    
+    }
+    else if (self.counter %2 == 0) {
+        [UIView animateWithDuration:0.5 animations:^{
+            [self animateMovementOfTreeOnY];
+//            [self animateMovementOfTreeOnH];
+        }];
+        
+    }
+    
+}
+
+#pragma mark - Animate
+-(void)animateBlinkingEyes
+{
+    [UIView animateWithDuration:0.6 animations:^{
+        self.eyesImageView.image = [UIImage imageNamed:@"daily_math_eyes_closed"];
+    } completion:^(BOOL finished) {
+        self.eyesImageView.image = [UIImage imageNamed:@"daily_math_eyes_open"];
+    }];
+}
+-(void)animateMovementOfEyes
+{
+
+    [UIView animateWithDuration:0.5 delay:0.5 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.animateEyes.constant = 139;
+        [self.view layoutIfNeeded];
+        
+    } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:0.5 delay:0.25 options:UIViewAnimationOptionCurveLinear animations:^{
+            self.animateEyes.constant = 130;
+            [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.5 delay:0.25 options:UIViewAnimationOptionCurveLinear animations:^{
+                self.animateEyes.constant = 121;
+                [self.view layoutIfNeeded];
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.5 delay:0.25 options:UIViewAnimationOptionCurveLinear animations:^{
+                    self.animateEyes.constant = 130;
+                    [self.view layoutIfNeeded];
+                } completion:^(BOOL finished) {
+                }];
+                
+            }];
+            
+        }];
+        
+    }];
+}
+
+-(void)animateMovementOfTreeOnY
+{
+    
+    [UIView animateWithDuration:0.1 delay:0.5 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        self.animateTreeOnY.constant = 44;
+        self.animateTreeOnHCenterY.constant = 44;
+        [self.view layoutIfNeeded];
+        
+    } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:0.05 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            self.animateTreeOnY.constant = 36;
+            self.animateTreeOnHCenterY.constant = 35;
+            [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.05 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+                self.animateTreeOnY.constant = 44;
+                self.animateTreeOnHCenterY.constant = 44;
+                [self.view layoutIfNeeded];
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.05 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+                    self.animateTreeOnY.constant = 36;
+                    self.animateTreeOnHCenterY.constant = 35;
+                    [self.view layoutIfNeeded];
+                } completion:^(BOOL finished) {
+                }];
+                
+            }];
+            
+        }];
+        
+    }];
+}
+
+-(void)animateMovementOfTreeOnH
+{
+    
+    [UIView animateWithDuration:0.1 delay:0.5 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.animateTreeOnH.constant = -154;
+        [self.view layoutIfNeeded];
+        
+    } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:0.1 delay:0.2 options:UIViewAnimationOptionCurveLinear animations:^{
+            self.animateTreeOnH.constant = -156;
+            [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.1 delay:0.2 options:UIViewAnimationOptionCurveLinear animations:^{
+                self.animateTreeOnH.constant = -158;
+                [self.view layoutIfNeeded];
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.1 delay:0.2 options:UIViewAnimationOptionCurveLinear animations:^{
+                    self.animateTreeOnH.constant = -156;
+                    [self.view layoutIfNeeded];
+                } completion:^(BOOL finished) {
+                }];
+                
+            }];
+            
+        }];
+        
+    }];
 }
 @end
