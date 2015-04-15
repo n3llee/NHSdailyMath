@@ -6,6 +6,7 @@ Daily Math is a simple arithmetic exercise for all ages.
 ### Screenshot of the Apps
 
 ##### Main Menu
+<img src="https://cloud.githubusercontent.com/assets/6547793/7152151/e3c6ee26-e303-11e4-9e97-438966101e3e.png" width="300px" height="450px" />
 ![main menu](https://cloud.githubusercontent.com/assets/6547793/7152151/e3c6ee26-e303-11e4-9e97-438966101e3e.png =300x450)
 
 ##### Playing the game
