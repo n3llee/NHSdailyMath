@@ -21,4 +21,4 @@ Daily Math is a simple arithmetic exercise for all ages.
 * Share it with friends
 * Survival Mode - how long user can stay in game before game over
 * Combo Points - double points when user answered correctly in a row
-* Settings - customize the range of random questions. Default used 1 - 11. User can changed it to 3 - 5
+* Settings - customize the range of random questions. Default used 1 - 11. User can change the question to be between 3 - 5
