@@ -89,7 +89,7 @@
         selectedChallengesTime = @"full minutes";
     }
     
-    if ([self.userNameLabel.text length] > 0) {
+    if ([self.userNameLabel.text length] > 0 && [self.userNameLabel.text length] < 13) {
         [self.dataManager createNewDataWithName:self.userNameLabel.text scorePoint:self.pointsCollected selectedTime:selectedChallengesTime];
         
         NSLog(@"data store :%@", [self.dataManager scoreLeaderboard ]);
@@ -112,14 +112,15 @@
 
 - (IBAction)tappedShareButton:(id)sender {
     
-    NSString *textToShare = [NSString stringWithFormat:@"I earned %@ points in a minutes, can you beat my points?", self.pointsCollected];
-    //    NSURL *myWebsite = [NSURL URLWithString:@"http://nelly/callback"];
+    NSString *textToShare = [NSString stringWithFormat:@"I earned %@ points in a minutes on Daily Math App, can you beat my points?", self.pointsCollected];
     
-    NSArray *objectsToShare = @[textToShare];
+    UIImage * logo = [UIImage imageNamed:@"daily_math_main_header"];
+    
+    NSArray *objectsToShare = @[textToShare, logo];
     
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
     
-    
+    [activityVC setValue:@"Daily Math Challenge!" forKey:@"Subject"];
     
     NSArray *excludeActivities = @[UIActivityTypeAirDrop,
                                    UIActivityTypePrint,

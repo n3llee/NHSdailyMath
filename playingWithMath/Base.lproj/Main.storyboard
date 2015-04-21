@@ -174,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSz-lb-r9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-139" y="-762"/>
+            <point key="canvasLocation" x="49" y="-774"/>
         </scene>
         <!--Failed View Controller-->
         <scene sceneID="2Ff-9i-3vw">
@@ -437,7 +437,7 @@ You have collected</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khs-q1-RH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="-97"/>
+            <point key="canvasLocation" x="71" y="-95"/>
         </scene>
         <!--Success View Controller-->
         <scene sceneID="eUJ-jF-klg">
@@ -662,8 +662,8 @@ You have collected</string>
         <image name="daily_math_main_text_only" width="1563" height="649"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6kS-zi-YYb"/>
-        <segue reference="9w1-8G-aos"/>
         <segue reference="sd8-Wc-rlg"/>
+        <segue reference="53T-2C-n86"/>
+        <segue reference="9w1-8G-aos"/>
     </inferredMetricsTieBreakers>
 </document>
