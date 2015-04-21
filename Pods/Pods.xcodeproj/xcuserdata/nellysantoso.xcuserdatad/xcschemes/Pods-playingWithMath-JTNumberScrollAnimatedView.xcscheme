@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5F2FB5994882ABD359F88B9"
+               BlueprintIdentifier = "A482569CA32EF7CF6ED1D3B8"
                BuildableName = "libPods-playingWithMath-JTNumberScrollAnimatedView.a"
                BlueprintName = "Pods-playingWithMath-JTNumberScrollAnimatedView"
                ReferencedContainer = "container:Pods.xcodeproj">

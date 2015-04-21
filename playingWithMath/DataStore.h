@@ -12,11 +12,12 @@
 @interface DataStore : NSObject
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property(strong, nonatomic)NSArray * scoreLeaderboard;
-
+//@property(strong, nonatomic)NSMutableDictionary *userRankLists;
 + (instancetype)sharedDataStore;
 
 
 - (void)generateTestData;
 - (void)fetchData;
 -(void)createNewDataWithName:(NSString *)playerName scorePoint:(NSNumber *)scorePoint selectedTime:(NSString *)selectedTime;
+- (void)saveContext;
 @end

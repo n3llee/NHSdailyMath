@@ -42,7 +42,7 @@
     // Do any additional setup after loading the view.
     
     self.optionThreeLabel.enabled = NO;
-    self.optionFourLabel.enabled = NO;
+    self.optionFourLabel.enabled = YES;
 
     
 }

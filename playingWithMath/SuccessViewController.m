@@ -7,9 +7,14 @@
 //
 
 #import "SuccessViewController.h"
-
+#import "DataStore.h"
+#import "Score.h"
 @interface SuccessViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (strong, nonatomic) IBOutlet UITextField *userNameLabel;
+@property(strong, nonatomic)DataStore * dataManager;
+- (IBAction)saveDataTapped:(id)sender;
+
 
 @end
 
@@ -19,6 +24,7 @@
     [super viewDidLoad];
 //    self.messageLabel.text = @"You made it to our top scoring list.";
     // Do any additional setup after loading the view.
+    self.dataManager = [DataStore sharedDataStore];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,4 +42,31 @@
 }
 */
 
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    
+    [self.userNameLabel resignFirstResponder];
+    return YES;
+}
+
+- (IBAction)saveDataTapped:(id)sender {
+    
+    NSString * selectedChallengesTime;
+
+    if ([self.challengeTime isEqualToString:@"30"])
+    {
+        selectedChallengesTime = @"30 seconds";
+    }
+    else if ([self.challengeTime isEqualToString:@"60"])
+    {
+        selectedChallengesTime = @"full minutes";
+    }
+
+    [self.dataManager createNewDataWithName:self.userNameLabel.text scorePoint:self.pointsCollected selectedTime:selectedChallengesTime];
+    
+    NSLog(@"data store :%@", [self.dataManager scoreLeaderboard ]);
+    
+    [self.dataManager saveContext];
+    [self.dataManager fetchData];
+    
+}
 @end

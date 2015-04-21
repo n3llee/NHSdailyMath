@@ -25,6 +25,7 @@
 		747F79651ADB555400825492 /* FailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747F79641ADB555400825492 /* FailedViewController.m */; };
 		747F796B1ADB598100825492 /* TopFullMinuteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747F796A1ADB598100825492 /* TopFullMinuteViewController.m */; };
 		747F796E1ADB59A100825492 /* Top30SecondsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747F796D1ADB59A100825492 /* Top30SecondsViewController.m */; };
+		749D4BE51AE5835100EE4888 /* TopHalfMinuteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 749D4BE41AE5835100EE4888 /* TopHalfMinuteTableViewController.m */; };
 		74E8E8FE1AC9D29600E56EA9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E8E8FD1AC9D29600E56EA9 /* CoreData.framework */; };
 		74E8E9011AC9D35E00E56EA9 /* MathDataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74E8E8FF1AC9D35E00E56EA9 /* MathDataStore.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,8 @@
 		747F796A1ADB598100825492 /* TopFullMinuteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopFullMinuteViewController.m; sourceTree = "<group>"; };
 		747F796C1ADB59A100825492 /* Top30SecondsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Top30SecondsViewController.h; sourceTree = "<group>"; };
 		747F796D1ADB59A100825492 /* Top30SecondsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Top30SecondsViewController.m; sourceTree = "<group>"; };
+		749D4BE31AE5835100EE4888 /* TopHalfMinuteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopHalfMinuteTableViewController.h; sourceTree = "<group>"; };
+		749D4BE41AE5835100EE4888 /* TopHalfMinuteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopHalfMinuteTableViewController.m; sourceTree = "<group>"; };
 		74E8E8FD1AC9D29600E56EA9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		74E8E9001AC9D35E00E56EA9 /* MathDataStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MathDataStore.xcdatamodel; sourceTree = "<group>"; };
 		803A19BF6CC6FC1ABDA80ACB /* libPods-playingWithMath.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-playingWithMath.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +153,8 @@
 				747F796D1ADB59A100825492 /* Top30SecondsViewController.m */,
 				747F79691ADB598100825492 /* TopFullMinuteViewController.h */,
 				747F796A1ADB598100825492 /* TopFullMinuteViewController.m */,
+				749D4BE31AE5835100EE4888 /* TopHalfMinuteTableViewController.h */,
+				749D4BE41AE5835100EE4888 /* TopHalfMinuteTableViewController.m */,
 				747F79521AD7228700825492 /* ScreenBorder.h */,
 				747F79531AD7228700825492 /* ScreenBorder.m */,
 				74E8E8FF1AC9D35E00E56EA9 /* MathDataStore.xcdatamodeld */,
@@ -339,6 +344,7 @@
 				7423A05C1ABC5D6000D4A156 /* PlayViewController.m in Sources */,
 				747F79651ADB555400825492 /* FailedViewController.m in Sources */,
 				747F795D1ADB195200825492 /* Score.m in Sources */,
+				749D4BE51AE5835100EE4888 /* TopHalfMinuteTableViewController.m in Sources */,
 				7423A0591ABC5D6000D4A156 /* AppDelegate.m in Sources */,
 				74268B9F1ADD95DB00D050A4 /* ConfirmationViewController.m in Sources */,
 				74E8E9011AC9D35E00E56EA9 /* MathDataStore.xcdatamodeld in Sources */,

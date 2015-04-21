@@ -14,7 +14,7 @@
 #import "HTPressableButton.h"
 #import "UIColor+HTColor.h"
 #import <M13ProgressSuite/M13ProgressViewPie.h>
-#import "ConfirmationViewController.h"
+#import "SuccessViewController.h"
 
 
 @interface PlayViewController ()
@@ -30,8 +30,6 @@
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *movingPointsLabel;
-
-
 
 
 @property (strong, nonatomic) NSString * correctAnswer;
@@ -252,8 +250,10 @@
         
         NSString * storyboardName = @"Main";
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-        ConfirmationViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"ConfirmationVC"];
-        vc.pointsCollected = [NSString stringWithFormat:@"%ld", self.answeredCorrectly ];
+        SuccessViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"SuccessVC"];
+        
+        vc.pointsCollected = [NSNumber numberWithInteger: self.answeredCorrectly];
+        vc.challengeTime = [NSString stringWithFormat:@"%ld", self.defaultTimerSetting];
         [self presentViewController:vc animated:YES completion:nil];
     }
     else if (self.answeredCorrectly <= 0)

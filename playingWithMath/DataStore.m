@@ -23,6 +23,16 @@
     return _sharedDataStore;
 }
 
+-(instancetype)init
+{
+    self = [super init];
+    
+    if (self) {
+        _scoreLeaderboard = [[NSMutableArray alloc]init];
+    }
+    return self;
+}
+
 - (void)saveContext
 {
     NSError *error = nil;
@@ -52,7 +62,7 @@
     
     NSError *error = nil;
     
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"playingWithMath" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"MathDataStore" withExtension:@"momd"];
     NSManagedObjectModel *managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:managedObjectModel];
     
@@ -74,48 +84,52 @@
 
 - (void)generateTestData
 {
-    Score *scoreDataOne = [NSEntityDescription insertNewObjectForEntityForName:@"Score" inManagedObjectContext:self.managedObjectContext];
+//    Score *scoreDataOne = [NSEntityDescription insertNewObjectForEntityForName:@"Score" inManagedObjectContext:self.managedObjectContext];
+//    
+//    scoreDataOne.name  = @"Nana";
+//    scoreDataOne.time = @"30 seconds";
+//    scoreDataOne.score = @7;
+//    scoreDataOne.createdAt = [NSDate date];
+//    
+//    
+//    Score *scoreDataTwo = [NSEntityDescription insertNewObjectForEntityForName:@"Score" inManagedObjectContext:self.managedObjectContext];
+//    
+//    scoreDataTwo.name  = @"Leo";
+//    scoreDataTwo.time = @"30 seconds";
+//    scoreDataTwo.score = @10;
+//    scoreDataTwo.createdAt = [NSDate date];
+//    
+//    
+//    [self saveContext];
+//    [self fetchData];
     
-    scoreDataOne.name  = @"Nelly";
-    scoreDataOne.time = @"30 seconds";
-    scoreDataOne.score = @7;
-    scoreDataOne.createdAt = [NSDate date];
-    
-    
-    Score *scoreDataTwo = [NSEntityDescription insertNewObjectForEntityForName:@"Score" inManagedObjectContext:self.managedObjectContext];
-    
-    scoreDataTwo.name  = @"Ardian";
-    scoreDataTwo.time = @"30 seconds";
-    scoreDataTwo.score = @10;
-    scoreDataTwo.createdAt = [NSDate date];
-    
-    
-    [self saveContext];
-    [self fetchData];
+    [self createNewDataWithName:@"Hana" scorePoint:@30 selectedTime:@"30 seconds"];
 }
 
 - (void)fetchData
 {
     NSFetchRequest *messagesRequest = [NSFetchRequest fetchRequestWithEntityName:@"Score"];
     
-    NSSortDescriptor *createdAtSorter = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    NSSortDescriptor *createdAtSorter = [NSSortDescriptor sortDescriptorWithKey:@"score" ascending:NO];
     messagesRequest.sortDescriptors = @[createdAtSorter];
     
     self.scoreLeaderboard = [self.managedObjectContext executeFetchRequest:messagesRequest error:nil];
+    NSLog(@"scoreLeaderboard count %ld", [self.scoreLeaderboard count]);
     
     if ([self.scoreLeaderboard count]==0) {
         [self generateTestData];
     }
+    
 }
 
 -(void)createNewDataWithName:(NSString *)playerName scorePoint:(NSNumber *)scorePoint selectedTime:(NSString *)selectedTime
 {
-    Score *scoreDataTwo = [NSEntityDescription insertNewObjectForEntityForName:@"Score" inManagedObjectContext:self.managedObjectContext];
+    Score *scoreData = [NSEntityDescription insertNewObjectForEntityForName:@"Score" inManagedObjectContext:self.managedObjectContext];
     
-    scoreDataTwo.name  = playerName;
-    scoreDataTwo.time = selectedTime;
-    scoreDataTwo.score = scorePoint;
-    scoreDataTwo.createdAt = [NSDate date];
+    scoreData.name  = playerName;
+    scoreData.time = selectedTime;
+    scoreData.score = scorePoint;
+    scoreData.createdAt = [NSDate date];
     
     
     [self saveContext];

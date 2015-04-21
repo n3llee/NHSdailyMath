@@ -8,8 +8,10 @@
 
 #import "AppDelegate.h"
 
+#import "DataStore.h"
 @interface AppDelegate ()
 
+@property(strong, nonatomic)DataStore *dataStore;
 @end
 
 @implementation AppDelegate
@@ -17,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self.dataStore createNewDataWithName:@"Nita" scorePoint:@35 selectedTime:@"30 seconds"];
+    
+    [self.dataStore fetchData];
     return YES;
 }
 
