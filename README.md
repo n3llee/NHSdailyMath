@@ -12,7 +12,7 @@ Daily Math is a simple arithmetic exercise for all ages.
 <img src="https://cloud.githubusercontent.com/assets/6547793/7152161/0ce74e40-e304-11e4-94ac-465f3bfd3e11.png" width="300px" height="450px" />
 
 ##### Confirmation message
-<img src="https://cloud.githubusercontent.com/assets/6547793/7152162/216eff98-e304-11e4-95e0-fa6dca69499a.png" width="300px" height="450px" />
+<img src="https://cloud.githubusercontent.com/assets/6547793/7245755/1d425b58-e7bf-11e4-8c54-af23d1eb7428.png" width="300px" height="450px" />
 
 ##### High Score - user's rank in leaderboard
 <img src="https://cloud.githubusercontent.com/assets/6547793/7245737/87b59938-e7be-11e4-936b-8d286f14d645.png" width="300px" height="450px" />
