@@ -39,7 +39,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     self.optionThreeLabel.enabled = NO;
     self.optionFourLabel.enabled = YES;
@@ -49,7 +48,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -59,18 +57,7 @@
     self.defaultTimer = 300;
     
     [self startTimer];
-//    [UIView animateWithDuration:3.0 animations:^{
-//        [self animateMovementOfEyes];
-//    }];
-//    NSInteger eyesMovement = 3;
-//    for (NSInteger i = 0; eyesMovement < 0; i++ ) {
-//        
-//        
-//        
-//    }
 }
-
-
 
 
 #pragma mark - Navigation
@@ -117,7 +104,6 @@
     
     
     self.clockTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownTimer) userInfo:nil repeats:YES];
-//    self.timerLabel.text = [NSString stringWithFormat:@"Time: %ld", self.counter];
     
     
 }

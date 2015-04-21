@@ -21,9 +21,6 @@
 
 
 -(NSString *)findMathOperation;
-
-//-(NSString *) randomMathQuestionInString;
-//-(NSArray *) randomMathQuestionInArray;
 -(NSDictionary *)randomMathQuestion;
 -(NSString *) gettingMathAnswer;
 -(NSArray *)collectionOfPossibleAnswer;

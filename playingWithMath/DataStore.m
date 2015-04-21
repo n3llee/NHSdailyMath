@@ -84,25 +84,6 @@
 
 - (void)generateTestData
 {
-//    Score *scoreDataOne = [NSEntityDescription insertNewObjectForEntityForName:@"Score" inManagedObjectContext:self.managedObjectContext];
-//    
-//    scoreDataOne.name  = @"Nana";
-//    scoreDataOne.time = @"30 seconds";
-//    scoreDataOne.score = @7;
-//    scoreDataOne.createdAt = [NSDate date];
-//    
-//    
-//    Score *scoreDataTwo = [NSEntityDescription insertNewObjectForEntityForName:@"Score" inManagedObjectContext:self.managedObjectContext];
-//    
-//    scoreDataTwo.name  = @"Leo";
-//    scoreDataTwo.time = @"30 seconds";
-//    scoreDataTwo.score = @10;
-//    scoreDataTwo.createdAt = [NSDate date];
-//    
-//    
-//    [self saveContext];
-//    [self fetchData];
-    
     [self createNewDataWithName:@"Hana" scorePoint:@30 selectedTime:@"30 seconds"];
 }
 
@@ -112,8 +93,10 @@
     
     NSSortDescriptor *createdAtSorter = [NSSortDescriptor sortDescriptorWithKey:@"score" ascending:NO];
     messagesRequest.sortDescriptors = @[createdAtSorter];
+//    [messagesRequest setFetchLimit:6];
     
     self.scoreLeaderboard = [self.managedObjectContext executeFetchRequest:messagesRequest error:nil];
+    
     NSLog(@"scoreLeaderboard count %ld", [self.scoreLeaderboard count]);
     
     if ([self.scoreLeaderboard count]==0) {
@@ -137,4 +120,16 @@
 }
 
 
+-(BOOL)isUserExists:(NSString *)playerName
+{
+    [self fetchData];
+    
+    BOOL found = NO;
+    for (Score * data in self.scoreLeaderboard) {
+        if ([data.name isEqualToString:playerName]) {
+            found = YES;
+        }
+    }
+    return found;
+}
 @end

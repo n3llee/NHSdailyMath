@@ -80,14 +80,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // setting the progress bar
-//    self.progressBar = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
-    
-//    [self.view addSubview:self.progressBar];
-    
-//    CGAffineTransform transform = CGAffineTransformMakeScale(2.0f, 5.0f);
-//    self.progressBar.transform = transform;
-    
     //setting the animate questions
     self.animatedView.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:55];
     self.secondNumberAnimated.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:55];
@@ -133,7 +125,6 @@
 - (IBAction)answerButtonTapped:(id)sender {
     
     UIButton * option = sender;
-//    NSLog(@"which button : %@",option.titleLabel.text);
     
     [self enabledAllButtons:NO];
     
@@ -158,8 +149,7 @@
             self.movingPointsLabel.alpha = 0;
             self.movingPointCenterY.constant = 0;
             [self.view layoutIfNeeded];
-            
-//            [self changingOriginalColorOfButton:option];
+
             [self generatorMathProblem];
             [self viewDidAppear:YES];
             [self generateAnimation];
@@ -191,7 +181,6 @@
             self.movingPointCenterY.constant = 15;
             [self.view layoutIfNeeded];
             
-//            [self changingOriginalColorOfButton:option];
             [self generatorMathProblem];
             [self viewDidAppear:YES];
             [self generateAnimation];
@@ -439,7 +428,6 @@
 {
     self.counter -=1;
     self.pieCountMovement +=1;
-    //    self.timerLabel.text = [NSString stringWithFormat:@"Time: %ld", self.counter];
     self.progressBar.hidden = YES;
     self.progressBar.progress = (float)self.counter/(float)self.defaultTimerSetting;
     self.progressBar.progressTintColor = [UIColor greenColor];
@@ -490,7 +478,6 @@
     [self.headerView removeConstraints:self.headerView.constraints];
     [self.pointsLabel removeConstraints:self.pointsLabel.constraints];
     [self.movingPointsLabel removeConstraints:self.movingPointsLabel.constraints];
-//    [self.settingButton removeConstraints:self.settingButton.constraints];
     
     [self settingAnsweredButtons];
     
@@ -505,7 +492,6 @@
     self.headerView.translatesAutoresizingMaskIntoConstraints = NO;
     self.pointsLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.movingPointsLabel.translatesAutoresizingMaskIntoConstraints = NO;
-//    self.settingButton.translatesAutoresizingMaskIntoConstraints = NO;
     
     self.optionOneButton.translatesAutoresizingMaskIntoConstraints = NO;
     self.optionTwoButton.translatesAutoresizingMaskIntoConstraints = NO;
@@ -551,7 +537,7 @@
 //    NSLayoutConstraint * mathQuestionLabelY = [NSLayoutConstraint constraintWithItem:self.mathQuestionLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:0.25 constant:10];
 //    [self.view addConstraint:mathQuestionLabelY];
     
-    NSLayoutConstraint * animatedViewWidth = [NSLayoutConstraint constraintWithItem:self.animatedView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:0.0 constant:80];
+    NSLayoutConstraint * animatedViewWidth = [NSLayoutConstraint constraintWithItem:self.animatedView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:0.0 constant:90];
     [self.view addConstraint:animatedViewWidth];
     
     NSLayoutConstraint * animatedViewHeight = [NSLayoutConstraint constraintWithItem:self.animatedView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:0.0 constant:80];

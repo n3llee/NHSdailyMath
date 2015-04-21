@@ -9,10 +9,13 @@
 #import "SuccessViewController.h"
 #import "DataStore.h"
 #import "Score.h"
-@interface SuccessViewController ()
+
+@interface SuccessViewController () <UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 @property (strong, nonatomic) IBOutlet UITextField *userNameLabel;
 @property(strong, nonatomic)DataStore * dataManager;
+@property(nonatomic)CGPoint originalCenter;
 - (IBAction)saveDataTapped:(id)sender;
 
 
@@ -25,6 +28,17 @@
 //    self.messageLabel.text = @"You made it to our top scoring list.";
     // Do any additional setup after loading the view.
     self.dataManager = [DataStore sharedDataStore];
+    
+    [self.userNameLabel setDelegate:self];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    self.originalCenter = self.view.center;
+    [self.view addGestureRecognizer:tap];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,12 +56,26 @@
 }
 */
 
--(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
     [self.userNameLabel resignFirstResponder];
     return YES;
 }
 
+-(void)dismissKeyboard
+{
+    [self.userNameLabel resignFirstResponder];
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y-30);
+    } completion:^(BOOL finished) {
+    }];
+    
+}
 - (IBAction)saveDataTapped:(id)sender {
     
     NSString * selectedChallengesTime;

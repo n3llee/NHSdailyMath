@@ -73,41 +73,6 @@
 
 }
 
-//-(NSString *) randomMathQuestionInString
-//{
-//    NSInteger findFirst = 1+arc4random_uniform(10);
-//    NSInteger findSecond= 1+arc4random_uniform(10);
-//    
-//    self.singleMathOperation= self.findMathOperation;
-//    
-//    
-//    if (findFirst == 0 && findSecond == 0) {
-//        NSLog(@"got both zero");
-//        findFirst = 1;
-//        findSecond = 1;
-//    }
-//    
-//    if ([self.singleMathOperation isEqualToString:@"/"]) {
-//        
-//        self.firstNumber = findFirst * findSecond;
-//    }
-//    else
-//    {
-//        self.firstNumber = findFirst;
-//        
-//    }
-//    self.secondNumber = findSecond;
-//    
-//    self.question = [NSString stringWithFormat:@"%ld %@ %ld =", self.firstNumber, self.singleMathOperation, self.secondNumber];
-//    
-//    
-//    return self.question;
-//
-//}
-
-//NSLog(@"first number %ld", self.firstNumber);
-//NSLog(@"second number %ld", self.secondNumber);
-//NSLog(@"operation %@", self.singleMathOperation );
 
 -(NSString *)gettingMathAnswer
 {
