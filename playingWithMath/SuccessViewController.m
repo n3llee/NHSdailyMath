@@ -60,13 +60,25 @@
     {
         selectedChallengesTime = @"full minutes";
     }
-
-    [self.dataManager createNewDataWithName:self.userNameLabel.text scorePoint:self.pointsCollected selectedTime:selectedChallengesTime];
     
-    NSLog(@"data store :%@", [self.dataManager scoreLeaderboard ]);
+    if ([self.userNameLabel.text length] > 0) {
+        [self.dataManager createNewDataWithName:self.userNameLabel.text scorePoint:self.pointsCollected selectedTime:selectedChallengesTime];
+        
+        NSLog(@"data store :%@", [self.dataManager scoreLeaderboard ]);
+        
+        [self.dataManager saveContext];
+        [self.dataManager fetchData];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter Name"
+                                                        message:@"You're record will not be saved."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
     
-    [self.dataManager saveContext];
-    [self.dataManager fetchData];
     
 }
 @end
