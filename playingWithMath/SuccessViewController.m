@@ -60,6 +60,7 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self.userNameLabel resignFirstResponder];
+    self.view.center = self.originalCenter;
     return YES;
 }
 
