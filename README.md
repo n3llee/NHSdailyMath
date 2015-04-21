@@ -14,8 +14,11 @@ Daily Math is a simple arithmetic exercise for all ages.
 ##### Confirmation message
 <img src="https://cloud.githubusercontent.com/assets/6547793/7152162/216eff98-e304-11e4-95e0-fa6dca69499a.png" width="300px" height="450px" />
 
+##### High Score - user's rank in leaderboard
+<img src="https://cloud.githubusercontent.com/assets/6547793/7245737/87b59938-e7be-11e4-936b-8d286f14d645.png" width="300px" height="450px" />
 
 ### Next Features
-* High Score - user's rank in leaderboard
+* Share it with friends
 * Survival Mode - how long user can stay in game before game over
-* Combo Points - double points when user answered correctly in a row 
+* Combo Points - double points when user answered correctly in a row
+* Settings - customize the range of random questions. Default used 1 - 11. User can changed it to 3 - 5
