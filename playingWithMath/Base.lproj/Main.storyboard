@@ -447,7 +447,7 @@ You have collected</string>
                         <viewControllerLayoutGuide type="top" id="088-Hv-J8t"/>
                         <viewControllerLayoutGuide type="bottom" id="doP-wv-fEP"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Uy2-6q-iae">
+                    <view key="view" alpha="0.94999999999999996" contentMode="scaleToFill" id="Uy2-6q-iae">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -471,17 +471,8 @@ You have collected</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dkv-GV-wpF">
-                                <rect key="frame" x="169" y="339" width="262" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="262" id="KVy-Ee-Egj"/>
-                                    <constraint firstAttribute="height" constant="45" id="q69-4p-6zn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="26"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccP-Ez-kz5">
-                                <rect key="frame" x="237" y="451" width="125" height="50"/>
+                                <rect key="frame" x="237.5" y="451" width="125" height="50"/>
                                 <color key="backgroundColor" red="0.99215686274509807" green="0.52156862745098043" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="L9x-y8-2M9"/>
@@ -507,26 +498,59 @@ You have collected</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oPS-zX-aYa">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem systemItem="action" id="bLk-yI-gkM">
-                                        <connections>
-                                            <action selector="tappedShareButton:" destination="B90-AV-dNp" id="rhh-wR-aM2"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hx9-kv-Rs2" userLabel="userInputView">
+                                <rect key="frame" x="162" y="368" width="300" height="57"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dkv-GV-wpF">
+                                        <rect key="frame" x="5" y="2" width="230" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="230" id="KVy-Ee-Egj"/>
+                                            <constraint firstAttribute="height" constant="45" id="q69-4p-6zn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="26"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPS-zX-aYa">
+                                        <rect key="frame" x="250" y="6" width="50" height="48"/>
+                                        <rect key="contentStretch" x="0.0" y="0.050000000000000017" width="1" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="7cD-1Y-ALQ"/>
+                                            <constraint firstAttribute="height" constant="48" id="nt7-hc-pcf"/>
+                                        </constraints>
+                                        <items>
+                                            <barButtonItem systemItem="action" id="bLk-yI-gkM">
+                                                <connections>
+                                                    <action selector="tappedShareButton:" destination="B90-AV-dNp" id="rhh-wR-aM2"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="barTintColor" red="0.34900151359999998" green="0.79513819259999996" blue="0.33240143599999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </toolbar>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="dkv-GV-wpF" secondAttribute="bottom" constant="2" id="9PJ-o7-T1C"/>
+                                    <constraint firstItem="oPS-zX-aYa" firstAttribute="top" secondItem="Hx9-kv-Rs2" secondAttribute="top" constant="6" id="AjO-jz-4nI"/>
+                                    <constraint firstAttribute="width" constant="300" id="Aku-we-TUT"/>
+                                    <constraint firstAttribute="trailing" secondItem="oPS-zX-aYa" secondAttribute="trailing" constant="5" id="GBE-1M-5M4"/>
+                                    <constraint firstItem="dkv-GV-wpF" firstAttribute="top" secondItem="Hx9-kv-Rs2" secondAttribute="top" constant="2" id="Hrm-JS-em3"/>
+                                    <constraint firstItem="oPS-zX-aYa" firstAttribute="leading" secondItem="Hx9-kv-Rs2" secondAttribute="leading" constant="250" id="MGK-sj-jCY"/>
+                                    <constraint firstItem="dkv-GV-wpF" firstAttribute="leading" secondItem="Hx9-kv-Rs2" secondAttribute="leading" constant="5" id="SYH-Ed-dm2"/>
+                                    <constraint firstAttribute="bottom" secondItem="oPS-zX-aYa" secondAttribute="bottom" constant="2" id="clu-Ut-8Al"/>
+                                    <constraint firstAttribute="height" constant="50" id="p6h-vt-nR6"/>
+                                    <constraint firstAttribute="trailing" secondItem="dkv-GV-wpF" secondAttribute="trailing" constant="54" id="vsT-a7-UsR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.3411764705882353" green="0.77254901960784317" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="dkv-GV-wpF" secondAttribute="centerX" id="1gG-72-nmD"/>
                             <constraint firstAttribute="centerX" secondItem="ccP-Ez-kz5" secondAttribute="centerX" id="A8k-1r-vP1"/>
                             <constraint firstAttribute="centerY" secondItem="D8R-gH-L2J" secondAttribute="centerY" multiplier="0.95" id="B8W-gG-cDf"/>
                             <constraint firstAttribute="centerX" secondItem="SEt-36-KjH" secondAttribute="centerX" id="Inz-9f-GQo"/>
                             <constraint firstAttribute="centerY" secondItem="SEt-36-KjH" secondAttribute="centerY" multiplier="1.85" id="RoK-nl-47k"/>
+                            <constraint firstAttribute="centerX" secondItem="Hx9-kv-Rs2" secondAttribute="centerX" multiplier="0.9" id="TL2-eK-VrG"/>
+                            <constraint firstAttribute="centerY" secondItem="Hx9-kv-Rs2" secondAttribute="centerY" multiplier="0.83" id="WB6-AF-BR8"/>
                             <constraint firstAttribute="centerY" secondItem="LDi-Yw-XI3" secondAttribute="centerY" multiplier="1.2" id="cRb-Sm-thE"/>
-                            <constraint firstAttribute="centerY" secondItem="dkv-GV-wpF" secondAttribute="centerY" multiplier="0.83" id="gvH-MH-s4k"/>
                             <constraint firstAttribute="centerX" secondItem="D8R-gH-L2J" secondAttribute="centerX" id="hFT-fC-pF6"/>
                             <constraint firstAttribute="centerY" secondItem="ccP-Ez-kz5" secondAttribute="centerY" multiplier="0.63" id="kku-7P-dDz"/>
                             <constraint firstAttribute="centerX" secondItem="LDi-Yw-XI3" secondAttribute="centerX" id="yeV-hV-mNh"/>
@@ -664,6 +688,6 @@ You have collected</string>
     <inferredMetricsTieBreakers>
         <segue reference="sd8-Wc-rlg"/>
         <segue reference="53T-2C-n86"/>
-        <segue reference="9w1-8G-aos"/>
+        <segue reference="VAv-Gu-TK2"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *userNameLabel;
 @property(strong, nonatomic)DataStore * dataManager;
 @property(nonatomic)CGPoint originalCenter;
+@property(strong, nonatomic)NSString * selectedChallenge;
 - (IBAction)saveDataTapped:(id)sender;
 
 
@@ -79,19 +80,18 @@
 }
 - (IBAction)saveDataTapped:(id)sender {
     
-    NSString * selectedChallengesTime;
 
     if ([self.challengeTime isEqualToString:@"30"])
     {
-        selectedChallengesTime = @"30 seconds";
+        self.selectedChallenge = @"30 seconds";
     }
     else if ([self.challengeTime isEqualToString:@"60"])
     {
-        selectedChallengesTime = @"full minutes";
+        self.selectedChallenge = @"full minutes";
     }
     
     if ([self.userNameLabel.text length] > 0 && [self.userNameLabel.text length] < 13) {
-        [self.dataManager createNewDataWithName:self.userNameLabel.text scorePoint:self.pointsCollected selectedTime:selectedChallengesTime];
+        [self.dataManager createNewDataWithName:self.userNameLabel.text scorePoint:self.pointsCollected selectedTime:self.selectedChallenge];
         
         NSLog(@"data store :%@", [self.dataManager scoreLeaderboard ]);
         
@@ -113,7 +113,8 @@
 
 - (IBAction)tappedShareButton:(id)sender {
     
-    NSString *textToShare = [NSString stringWithFormat:@"I earned %@ points in a minutes on Daily Math App, can you beat my points?", self.pointsCollected];
+
+    NSString *textToShare = [NSString stringWithFormat:@"I earned %@ points in a %@ on Daily Math App, can you beat my points?", self.pointsCollected, self.selectedChallenge];
     
     UIImage * logo = [UIImage imageNamed:@"daily_math_main_header"];
     
