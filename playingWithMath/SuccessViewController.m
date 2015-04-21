@@ -81,4 +81,31 @@
     
     
 }
+
+- (IBAction)tappedShareButton:(id)sender {
+    
+    NSString *textToShare = [NSString stringWithFormat:@"I earned %@ points in a minutes, can you beat my points?", self.pointsCollected];
+    //    NSURL *myWebsite = [NSURL URLWithString:@"http://nelly/callback"];
+    
+    NSArray *objectsToShare = @[textToShare];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+    
+    
+    
+    NSArray *excludeActivities = @[UIActivityTypeAirDrop,
+                                   UIActivityTypePrint,
+                                   UIActivityTypeAssignToContact,
+                                   UIActivityTypeSaveToCameraRoll,
+                                   UIActivityTypeAddToReadingList,
+                                   UIActivityTypePostToFlickr,
+                                   UIActivityTypePostToVimeo];
+    
+    activityVC.excludedActivityTypes = excludeActivities;
+    
+    
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
+
+
 @end
