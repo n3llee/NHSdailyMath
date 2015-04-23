@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "42BF6D0BE6DFFD86E53FE62C"
+               BlueprintIdentifier = "C47EAB9B684F141A4AE47054"
                BuildableName = "libPods-playingWithMath-ASOAnimatedButton.a"
                BlueprintName = "Pods-playingWithMath-ASOAnimatedButton"
                ReferencedContainer = "container:Pods.xcodeproj">

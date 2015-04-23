@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3E72860E74E1496FD5E26F37"
+               BlueprintIdentifier = "A87EC53917F27E83A118F7F1"
                BuildableName = "libPods-playingWithMath-SCLAlertView-Objective-C.a"
                BlueprintName = "Pods-playingWithMath-SCLAlertView-Objective-C"
                ReferencedContainer = "container:Pods.xcodeproj">
